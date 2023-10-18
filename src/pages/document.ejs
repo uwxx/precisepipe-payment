@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+  <script>
+    function resize() {
+      let docElem = document.documentElement;
+      if (docElem.clientWidth >= 1920) {
+        docElem.style.fontSize = '100px';
+      } else if (docElem.clientWidth < 1920 && docElem.clientWidth > 750) {
+        docElem.style.fontSize = 100 * (docElem.clientWidth / 1920) + 'px';
+      } else if (docElem.clientWidth <= 750) {
+        docElem.style.fontSize = 100 * (docElem.clientWidth / 414) + 'px';
+      }
+    };
+    resize();
+    window.onresize = resize;
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
+</html>
